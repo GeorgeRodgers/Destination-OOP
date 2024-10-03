@@ -7,11 +7,14 @@ describe(`Test for Airport class:`, () => {
     let airport;
 
     beforeEach(() => {
-        airport = new Airport(`London Heathrow`, `LHR`)
+        airport = new Airport(`London Heathrow`)
     })
     
     test(`Assigns airport name correctly`, () => {
         expect(airport.name).toBe(`London Heathrow`);
+    })
+    test(`Static poperty airportCode is correct`, () => {
+        expect(Airport.airportCode).toBe(`LHR`);
     })
     test(`planes is initialized as an empty array`, () => {
         expect(airport.getPlanes()).toEqual([]);
